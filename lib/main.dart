@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kursovay/widgets/auth/auth_widget.dart';
+import 'package:kursovay/widgets/booking/booking_widget.dart';
 import 'package:kursovay/widgets/calendar/calendar_widget.dart';
 import 'package:kursovay/widgets/main_screen/main_screen_widget.dart';
 import 'package:kursovay/widgets/refill/refill_widget.dart';
@@ -25,26 +26,10 @@ class MyApp extends StatelessWidget {
         ),
       ),
       routes: {
-        '/auth': (context) => const AuthWidget(),
-        '/main_screen': (context) => const MainScreenWidget(),
-        '/main_screen/refill_widget': (context) => RefillWidget(),
-        '/main_screen/calendar_widget': (context) {
-          var arguments = ModalRoute.of(context)!.settings.arguments as Map;
-          int id = arguments[1];
-          String title = arguments[2];
-          String address = arguments[3];
-          if (id is int) {
-            return CalendarWidget(
-                addressesId: id,
-                addressesTitle: title,
-                addressesAddress: address);
-          } else {
-            return CalendarWidget(
-                addressesId: 0,
-                addressesTitle: title,
-                addressesAddress: address);
-          }
-        },
+        AuthWidget.routeName: (context) => const AuthWidget(),
+        MainScreenWidget.routeName: (context) => const MainScreenWidget(),
+        RefillWidget.routeName: (context) => RefillWidget(),
+        CalendarWidget.routeName: (context) => CalendarWidget(),
       },
       initialRoute: '/auth',
     );
