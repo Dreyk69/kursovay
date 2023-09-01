@@ -33,7 +33,7 @@ class BookingWidget extends StatelessWidget {
     void _onAddressesTab(int index) {
       Navigator.of(context).pushNamed(
         CalendarWidget.routeName,
-        arguments: AddressesListClass,
+        arguments: AddressesListClass.addressesList[index],
       );
     }
 

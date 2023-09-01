@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kursovay/resources/resources.dart';
 
+import '../refill/refill_widget.dart';
+
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget({super.key});
 
@@ -176,7 +178,7 @@ class ProfileWidget extends StatelessWidget {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () => Navigator.of(context)
-                      .pushNamed('/main_screen/refill_widget'),
+                      .pushNamed(RefillWidget.routeName),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
                   ),

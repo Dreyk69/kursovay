@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:kursovay/widgets/booking/booking_widget.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import '../booking/booking_widget.dart';
-
 class CalendarWidget extends StatelessWidget {
+   static const routeName = '/main_screen/calendar_widget';
   DateTime today = DateTime.now();
-  final int addressesId;
-  final String addressesTitle;
-  final String addressesAddress;
   CalendarWidget(
-      {super.key,
-      required this.addressesId,
-      required this.addressesTitle,
-      required this.addressesAddress});
+      {super.key,});
 
   @override
   Widget build(BuildContext context) {
+  final arguments = ModalRoute.of(context)!.settings.arguments as AddressesListClass;
+  final id = arguments;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Выбрать дату'),
@@ -34,12 +30,12 @@ class CalendarWidget extends StatelessWidget {
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(addressesTitle,
+                    Text('Тут должен быть текст из аргумента',
                         style: const TextStyle(
                             color: Color.fromARGB(255, 255, 255, 255),
                             fontSize: 16,
                             fontWeight: FontWeight.bold)),
-                    Text(addressesAddress,
+                    Text('Тут должен быть текст из аргумента',
                         style: const TextStyle(
                             color: Color.fromARGB(255, 208, 208, 208),
                             fontSize: 13,

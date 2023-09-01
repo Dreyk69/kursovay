@@ -3,6 +3,7 @@ import 'package:kursovay/resources/resources.dart';
 import 'package:kursovay/widgets/main_screen/main_screen_widget.dart';
 
 class AuthWidget extends StatefulWidget {
+  static const routeName = '/auth';
   const AuthWidget({super.key});
 
   @override
@@ -41,7 +42,7 @@ class _FormWidgetState extends State<_FormWidget> {
     final password = _passwordTextController.text;
     if (fio == 'admin' && password == 'admin') {
       errorText = null;
-      Navigator.of(context).pushReplacementNamed('/main_screen');
+      Navigator.of(context).pushReplacementNamed(MainScreenWidget.routeName);
     } else {
       errorText = 'Не верное ФИО или пароль';
     }
