@@ -10,8 +10,8 @@ class Addresses {
   Addresses(this.title, this.address, this.id);
 }
 
-class BookingWidget extends StatelessWidget {
-  final _addresses = [
+class AddressesListClass {
+  static final addressesList = [
     Addresses(
         'Семеновская', 'м. Семеновская, улица Вельяминовская 6 (2 этаж)', 0),
     Addresses(
@@ -23,25 +23,24 @@ class BookingWidget extends StatelessWidget {
     Addresses(
         'Щелковская', 'м. Щелковская, Щелковское шоссе 91Вс1 (2 этаж)', 3),
   ];
+}
 
+class BookingWidget extends StatelessWidget {
   BookingWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     void _onAddressesTab(int index) {
-      final id = _addresses[index].id;
-      final title = _addresses[index].title;
-      final address = _addresses[index].address;
       Navigator.of(context).pushNamed(
-        '/main_screen/calendar_widget',
-        arguments: {1: id, 2: title, 3: address},
+        CalendarWidget.routeName,
+        arguments: AddressesListClass,
       );
     }
 
     return ListView.builder(
-      itemCount: _addresses.length,
+      itemCount: AddressesListClass.addressesList.length,
       itemBuilder: (context, index) {
-        final addresses = _addresses[index];
+        final addresses = AddressesListClass.addressesList[index];
         return Card(
           margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
           color: const Color.fromARGB(255, 40, 40, 40),

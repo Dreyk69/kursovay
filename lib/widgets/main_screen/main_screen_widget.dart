@@ -5,6 +5,7 @@ import '../profile/profile_widget.dart';
 
 class MainScreenWidget extends StatefulWidget {
   const MainScreenWidget({super.key});
+  static const routeName = '/main_screen';
 
   @override
   State<MainScreenWidget> createState() => _MainScreenWidgetState();
