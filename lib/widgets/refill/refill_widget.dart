@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RefillWidget extends StatelessWidget {
-  RefillWidget({super.key});
+  const RefillWidget({super.key});
   static const routeName = '/main_screen/refill_widget';
 
   @override

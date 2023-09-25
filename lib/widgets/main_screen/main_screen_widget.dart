@@ -18,7 +18,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
 
   static final List<Widget> _widgetOption = <Widget>[
     const ProfileWidget(),
-    BookingWidget(),
+    const BookingWidget(),
     MenuWidget(),
   ];
   void onSelectTab(int index) {

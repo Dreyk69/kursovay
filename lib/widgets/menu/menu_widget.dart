@@ -26,11 +26,11 @@ class MenuWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       padding: const EdgeInsets.all(8),
-      separatorBuilder: (BuildContext context, int index) => Divider(),
+      separatorBuilder: (BuildContext context, int index) => const Divider(),
       itemCount: element.length,
       itemBuilder: (BuildContext context, int index) {
         return ListTile(
-          title: Text(element[index], style: TextStyle(fontSize: 22)),
+          title: Text(element[index], style: const TextStyle(fontSize: 22)),
           leading: Icon(
             icons[index],
             color: Colors.blue,

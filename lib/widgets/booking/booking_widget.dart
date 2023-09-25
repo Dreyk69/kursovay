@@ -26,10 +26,11 @@ class AddressesListClass {
 }
 
 class BookingWidget extends StatelessWidget {
-  BookingWidget({super.key});
+  const BookingWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // ignore: no_leading_underscores_for_local_identifiers
     void _onAddressesTab(int index) {
       Navigator.of(context).pushNamed(
         CalendarWidget.routeName,

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:kursovay/resources/resources.dart';
 import 'package:kursovay/widgets/main_screen/main_screen_widget.dart';
 
+import '../registration/registration_widget.dart';
+
 class AuthWidget extends StatefulWidget {
   static const routeName = '/auth';
   const AuthWidget({super.key});
@@ -34,6 +36,7 @@ class _FormWidget extends StatefulWidget {
 }
 
 class _FormWidgetState extends State<_FormWidget> {
+  // ignore: avoid_init_to_null
   String? errorText = null;
   final _fioTextController = TextEditingController(text: 'admin');
   final _passwordTextController = TextEditingController(text: 'admin');
@@ -50,7 +53,7 @@ class _FormWidgetState extends State<_FormWidget> {
   }
 
   void _auth() {
-    print('sign in');
+    Navigator.of(context).pushNamed(RegistrationWidget.routeName);
   }
 
   @override
