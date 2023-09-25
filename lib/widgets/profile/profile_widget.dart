@@ -33,7 +33,7 @@ class ProfileWidget extends StatelessWidget {
                                 fit: BoxFit.fill),
                           )),
                       SizedBox(
-                        width: 115,
+                        width: 120,
                         height: 30,
                         child: ElevatedButton(
                           onPressed: () {
@@ -84,14 +84,14 @@ class ProfileWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-                Flexible(
+                const Flexible(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
+                    padding: EdgeInsets.symmetric(
                         vertical: 10, horizontal: 10),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
+                      children: [
                         Text('Азовский Никита Андреевич',
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
